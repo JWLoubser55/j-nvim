@@ -1,6 +1,7 @@
 require("core.remap")
 require("core.packer")
 
+vim.opt.expandtab = true
 vim.opt.termguicolors = true
 vim.opt.textwidth = 80
 vim.opt.tabstop = 4
