@@ -15,3 +15,10 @@ vim.g.mapleader = " "
 vim.keymap.set('n', '<leader>w', function ()
     vim.o.list = not vim.o.list
 end)
+
+--vim.api.nvim_create_autocmd("BufWritePre", {
+--  pattern = "*",
+--  callback = function()
+--    vim.lsp.buf.format({ async = true })
+--  end,
+--})
