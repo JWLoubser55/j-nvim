@@ -35,6 +35,7 @@ ts.setup {
 --vim.treesitter.language.register("doxygen", "c")
 --vim.treesitter.language.register("doxygen", "cpp")
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { '<filetype>' },
-  callback = function() vim.treesitter.start() end,
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
 })
