@@ -1,4 +1,6 @@
 vim.pack.add({
+    --icons for lualine, oil, and anything else that might need it
+    {src = "https://github.com/nvim-tree/nvim-web-devicons"},
     --tmux nav
     {src = "https://github.com/christoomey/vim-tmux-navigator"},
     --which-key (motion hints)
@@ -7,13 +9,15 @@ vim.pack.add({
     {src = "https://github.com/cocopon/iceberg.vim"},
     {src = "https://github.com/rebelot/kanagawa.nvim"},
     {src = "https://github.com/projekt0n/github-nvim-theme"},
-    --rainbow delimiters
-    {src = "https://github.com/HiPhish/rainbow-delimiters.nvim"},
     --toggleterm
     {src = "https://github.com/akinsho/toggleterm.nvim"},
-    --treesitter
+    --telescope
     {src = "https://github.com/nvim-lua/plenary.nvim"},
+    {src = "https://github.com/nvim-telescope/telescope.nvim"},
+    --treesitter
     {src = "https://github.com/nvim-treesitter/nvim-treesitter"},
+    --rainbow delimiters
+    {src = "https://github.com/HiPhish/rainbow-delimiters.nvim"},
     
     --harpoon (file buffer shorcuts)
     {src = "https://github.com/ThePrimeagen/harpoon"},
@@ -32,8 +36,6 @@ vim.pack.add({
     {src = "https://github.com/VonHeikemen/lsp-zero.nvim"},
 
     {src = "https://github.com/mhartington/formatter.nvim"},
-    --icons for lualine, oil, and anything else that might need it
-    {src = "https://github.com/nvim-tree/nvim-web-devicons"},
     --lualine
     {src = "https://github.com/nvim-lualine/lualine.nvim"},
     --oil (netrw replacement)
@@ -44,5 +46,6 @@ vim.pack.add({
     --{src = "https://github.com/OXY2DEV/bars-N-lines.nvim"},
 })
 
+require("rainbow-delimiters.setup").setup()
 require("toggleterm").setup()
 require("oil").setup()
