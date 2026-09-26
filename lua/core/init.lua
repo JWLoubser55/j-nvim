@@ -1,5 +1,5 @@
 require("core.remap")
-require("core.packer")
+require("core.pack")
 
 vim.opt.expandtab = true
 vim.opt.termguicolors = true

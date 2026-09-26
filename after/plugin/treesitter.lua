@@ -1,4 +1,8 @@
-require'nvim-treesitter.configs'.setup {
+local ts= require('nvim-treesitter')
+
+vim.cmd [[TSUpdate]]
+
+ts.setup {
   -- A list of parser names, or "all" (the five listed parsers should always be installed)
   ensure_installed = {"python", "comment", "markdown", "html", "xml", "c", "cpp", 
   	"lua", "vim", "vimdoc", "query", "java", "pascal", "doxygen", "git_config"},
