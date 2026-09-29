@@ -1,6 +1,6 @@
 vim.api.nvim_create_user_command("Colour", function(opts)
     ColourMyPencils(opts.args)
-end, { nargs = 1 })
+end, { nargs = 1, desc = 'Changes the colorscheme, but defaults to kanagawa' })
 
 function ColourMyPencils(colour)
 	colour = colour or "kanagawa"
