@@ -18,7 +18,6 @@ lsp_zero.extend_lspconfig({
   sign_text = true,
 })
 
-require("fstar").setup{}
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {"asm_lsp", "clangd"},
@@ -26,7 +25,7 @@ require('mason-lspconfig').setup({
     -- this first function is the "default handler"
     -- it applies to every language server without a "custom handler"
     function(server_name)
-      vim.lsp.config(server_name).setup({})
+      vim.lsp.enable(server_name)
     end,
     
     -- this is the "custom handler" for `lua_ls`
@@ -58,5 +57,3 @@ cmp.setup({
     ['<C-d>'] = cmp.mapping.scroll_docs(4),
   }),
 })
-
-vim.lsp.enable('clangd')
