@@ -43,7 +43,8 @@ vim.pack.add({
     --helpview
     {src = "https://github.com/OXY2DEV/helpview.nvim"},
     --bar and lines for line numbers
-    --{src = "https://github.com/OXY2DEV/bars-N-lines.nvim"},
+    --{src = "https://github.com/OXY2DEV/bars.nvim"},
+    {src = "https://github.com/gebner/VimFStar"},
 })
 
 require("rainbow-delimiters.setup").setup()

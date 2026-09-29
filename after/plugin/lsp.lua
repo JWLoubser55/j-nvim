@@ -18,6 +18,7 @@ lsp_zero.extend_lspconfig({
   sign_text = true,
 })
 
+require("fstar").setup{}
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {"asm_lsp", "clangd"},
