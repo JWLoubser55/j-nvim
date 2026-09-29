@@ -15,7 +15,7 @@ vim.pack.add({
     {src = "https://github.com/nvim-lua/plenary.nvim"},
     {src = "https://github.com/nvim-telescope/telescope.nvim"},
     --treesitter
-    {src = "https://github.com/nvim-treesitter/nvim-treesitter"},
+    {src = "https://github.com/romus204/tree-sitter-manager.nvim"},
     --rainbow delimiters
     {src = "https://github.com/HiPhish/rainbow-delimiters.nvim"},
     
