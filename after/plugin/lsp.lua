@@ -19,25 +19,8 @@ lsp_zero.extend_lspconfig({
 })
 
 require('mason').setup({})
-require('mason-lspconfig').setup({
-  ensure_installed = {"asm_lsp", "clangd"},
-  handlers = {
-    -- this first function is the "default handler"
-    -- it applies to every language server without a "custom handler"
-    function(server_name)
-      vim.lsp.enable(server_name)
-    end,
-    
-    -- this is the "custom handler" for `lua_ls`
-    lua_ls = function()
-      vim.lsp.config(lua_ls).setup({
-        on_init = function(client)
-          lsp_zero.nvim_lua_settings(client, {})
-        end,
-      })
-    end,
-  }
-})
+require('mason-lspconfig').setup({ensure_installed = {"ada_language_server", "asm_lsp", "clangd"}})
+vim.lsp.enable('ada-ls')
 
 local cmp = require('cmp')
 
