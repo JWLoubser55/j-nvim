@@ -20,7 +20,8 @@ lsp_zero.extend_lspconfig({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({ensure_installed = {"ada_language_server", "asm_lsp", "clangd"}})
-vim.lsp.enable('ada-ls')
+--vim.lsp.config('ada_ls')
+vim.lsp.enable('ada_ls')
 
 local cmp = require('cmp')
 
