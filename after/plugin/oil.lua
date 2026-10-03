@@ -1,3 +1,15 @@
+-- Declare a global function to retrieve the current directory
+function _G.get_oil_winbar()
+  local bufnr = vim.api.nvim_win_get_buf(vim.g.statusline_winid)
+  local dir = require("oil").get_current_dir(bufnr)
+  if dir then
+    return vim.fn.fnamemodify(dir, ":~")
+  else
+    -- If there is no current directory (e.g. over ssh), just show the buffer name
+    return vim.api.nvim_buf_get_name(0)
+  end
+end
+
 require("oil").setup({
   -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
   -- Set to false if you want some other plugin (e.g. netrw) to open when you edit directories.
@@ -25,6 +37,7 @@ require("oil").setup({
     list = false,
     conceallevel = 3,
     concealcursor = "nvic",
+    winbar = "%!v:lua.get_oil_winbar()",
   },
   -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
   delete_to_trash = false,
@@ -179,4 +192,41 @@ require("oil").setup({
     border = "rounded",
   },
   vim.keymap.set("n", "<leader>pv",vim.cmd.Oil),
+})
+
+require("oil-git").setup({
+  debounce_ms = 50,
+  show_file_highlights = true,
+  show_directory_highlights = true,
+  show_file_symbols = true,
+  show_directory_symbols = true,
+  show_ignored_files = false,       -- Show ignored file status
+  show_ignored_directories = false, -- Show ignored directory status
+  show_branch = false,              -- Show current Git branch in oil buffers
+  branch_format = " %s",           -- Format string for branch display
+  symbol_position = "signcolumn",  -- "eol", "signcolumn", or "none"
+  can_use_signcolumn = function(bufnr) return "yes" end,  -- Optional callback(bufnr): nil|bool|string
+  ignore_gitsigns_update = false,   -- Ignore GitSignsUpdate events (fallback for flickering)
+  debug = false,            -- false, "minimal", or "verbose"
+
+  symbols = {
+    file = { added = "+", modified = "~", renamed = "->", deleted = "D",
+             copied = "C", conflict = "!", untracked = "?", ignored = "o" },
+    directory = { added = "*", modified = "*", renamed = "*", deleted = "*",
+                  copied = "*", conflict = "!", untracked = "*", ignored = "o" },
+  },
+
+  -- Colors (only applied if highlight groups don't exist)
+  highlights = {
+    OilGitAdded = { fg = "#a6e3a1" },
+    OilGitModifiedStaged = { fg = "#f9e2af" },
+    OilGitModifiedUnstaged = { fg = "#e5c890" },
+    OilGitBranch = { fg = "#89b4fa" },
+    OilGitRenamed = { fg = "#cba6f7" },
+    OilGitDeleted = { fg = "#f38ba8" },
+    OilGitCopied = { fg = "#cba6f7" },
+    OilGitConflict = { fg = "#fab387" },
+    OilGitUntracked = { fg = "#89b4fa" },
+    OilGitIgnored = { fg = "#6c7086" },
+  },
 })
