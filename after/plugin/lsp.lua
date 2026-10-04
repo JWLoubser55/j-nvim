@@ -18,8 +18,12 @@ lsp_zero.extend_lspconfig({
   sign_text = true,
 })
 
+vim.lsp.config('asm_lsp', { filetypes = {"nasm", "asm", "vmasm"}})
 require('mason').setup({})
-require('mason-lspconfig').setup({ensure_installed = {"ada_language_server", "asm_lsp", "clangd"}})
+require('mason-lspconfig').setup(
+    {ensure_installed = {"ada_language_server", "asm_lsp", "clangd"},
+    automatic_enable = { exclude = { "ada_language_server" }}
+})
 --vim.lsp.config('ada_ls')
 vim.lsp.enable('ada_ls')
 
