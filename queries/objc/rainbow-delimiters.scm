@@ -1,0 +1,1 @@
+/home/johan/.local/share/nvim/site/pack/core/opt/rainbow-delimiters.nvim/queries/c/rainbow-delimiters.scm
