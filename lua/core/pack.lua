@@ -30,10 +30,8 @@ vim.pack.add({
     {src = "https://github.com/neovim/nvim-lspconfig"}, 
     {src = "https://github.com/williamboman/mason.nvim"},
     {src = "https://github.com/williamboman/mason-lspconfig.nvim"},
-    {src = "https://github.com/L3MON4D3/LuaSnip"},
     {src = "https://github.com/hrsh7th/nvim-cmp"},
     {src = "https://github.com/hrsh7th/cmp-nvim-lsp"},
-    {src = "https://github.com/VonHeikemen/lsp-zero.nvim"},
 
     {src = "https://github.com/mhartington/formatter.nvim"},
     --lualine
