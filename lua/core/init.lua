@@ -12,7 +12,7 @@ vim.opt.colorcolumn = '80'
 vim.o.listchars = 'space:•,tab:→ ,trail:~,nbsp:○,eol:$'
 vim.o.signcolumn = 'yes'
 vim.cmd [[set nu rnu]]
-
+vim.cmd.colorscheme('kanagawa')
 vim.g.load_doxygen_syntax = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
