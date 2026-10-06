@@ -13,3 +13,7 @@
 (array_type_definition
   "(" @delimiter
   ")" @delimiter) @container
+
+(term
+  "(" @delimiter
+  ")" @delimiter) @container

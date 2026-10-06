@@ -41,5 +41,5 @@ autocmd("BufWritePost", {
 	command = ":FormatWrite",
 })
 
-vim.keymap.set("n", "<leader>f", vim.cmd.Format, { silent = true, noremap = true })
+--vim.keymap.set("n", "<leader>f", vim.cmd.Format, { silent = true, noremap = true })
 vim.keymap.set("n", "<leader>F", vim.cmd.FormatWrite, { silent = true, noremap = true })
