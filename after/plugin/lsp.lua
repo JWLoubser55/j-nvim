@@ -30,4 +30,7 @@ require("mason-lspconfig").setup({
 vim.lsp.enable("ada_ls")
 vim.lsp.enable("jsonls")
 
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format(), { silent = true, noremap = true })
+vim.keymap.set("n", "<leader>f", function()
+	vim.print("Formatted buffer")
+	vim.lsp.buf.format()
+end, { silent = true, noremap = true })
