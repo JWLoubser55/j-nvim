@@ -35,10 +35,17 @@ vim.pack.add({
 	{ src = "https://github.com/hrsh7th/nvim-cmp" },
 	{ src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
 
-	--conjure
+	--scheme stuff
+	----S expressions made easier
+	{ src = "https://github.com/tpope/vim-repeat" },
+	{ src = "https://github.com/tpope/vim-surround" },
+	{ src = "https://github.com/guns/vim-sexp" },
+	{ src = "https://github.com/tpope/vim-sexp-mappings-for-regular-people" },
+	----conjure
 	{ src = "https://github.com/Olical/conjure" },
 	{ src = "https://github.com/PaterJason/cmp-conjure" },
 
+    --Formatting
 	{ src = "https://github.com/mhartington/formatter.nvim" },
 	--lualine
 	{ src = "https://github.com/nvim-lualine/lualine.nvim" },
