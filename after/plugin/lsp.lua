@@ -21,6 +21,7 @@ cmp.setup({
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 vim.lsp.config("*", { capabilities = capabilities })
 vim.lsp.config("asm_lsp", { filetypes = { "nasm", "asm", "vmasm" } })
+vim.lsp.config("ada_ls", { cmd = { "alr", "exec", "--", "ada_language_server" } })
 require("mason").setup({})
 require("mason-lspconfig").setup({
 	--ensure_installed = { "ada_language_server", "asm_lsp", "clangd" },
