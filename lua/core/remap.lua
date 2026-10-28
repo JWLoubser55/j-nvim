@@ -16,6 +16,13 @@ vim.keymap.set("n", "<leader>w", function()
 	vim.o.list = not vim.o.list
 end)
 
+vim.keymap.set("n", "<leader>mp", function()
+	local tmp = vim.fn.tempname() .. ".md"
+	vim.fn.writefile(vim.api.nvim_buf_get_lines(0, 0, -1, false), tmp)
+	vim.cmd("botright split")
+	vim.cmd("terminal mdflow < " .. vim.fn.shellescape(tmp))
+end, { desc = "Render buffer with mdflow" })
+
 --vim.api.nvim_create_autocmd("BufWritePre", {
 --  pattern = "*",
 --  callback = function()
