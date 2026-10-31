@@ -8,20 +8,27 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.autoindent = true
-vim.opt.colorcolumn = '80'
-vim.o.listchars = 'space:•,tab:→ ,trail:~,nbsp:○,eol:$'
-vim.o.signcolumn = 'yes'
-vim.cmd [[set nu rnu]]
-vim.cmd.colorscheme('kanagawa')
+vim.opt.colorcolumn = "80"
+vim.o.listchars = "space:•,tab:→ ,trail:~,nbsp:○,eol:$"
+vim.o.signcolumn = "yes"
+vim.cmd([[set nu rnu]])
+vim.cmd.colorscheme("kanagawa")
 vim.g.load_doxygen_syntax = 1
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.opt.wrap = false
+--[[
+-- Turn off hard text wrap
+vim.opt.textwidth = 0
+vim.opt.formatoptions = vim.opt.formatoptions - 't'
+]]
+require("vim._core.ui2").enable({ msg = { targets = { progress = "msg" } } })
 
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-  if vim.fn.executable("pwsh") == 1 then
-    vim.o.shell = "pwsh"
-    vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
-    vim.o.shellquote = '"'
-    vim.o.shellxquote = ""
-  end
+	if vim.fn.executable("pwsh") == 1 then
+		vim.o.shell = "pwsh"
+		vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
+		vim.o.shellquote = '"'
+		vim.o.shellxquote = ""
+	end
 end
