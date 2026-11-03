@@ -48,7 +48,26 @@ cmp.setup({
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ "/", "?" }, {
-	mapping = cmp.mapping.preset.cmdline(),
+	mapping = cmp.mapping.preset.cmdline({
+		["<Down>"] = {
+			c = cmp.mapping.select_next_item(),
+		},
+		["<Up>"] = {
+			c = cmp.mapping.select_prev_item(),
+		},
+		["<Tab>"] = {
+			c = function()
+				if cmp.visible() then
+					if cmp.get_selected_index() == nil then
+						cmp.select_next_item()
+					end
+					cmp.confirm({ select = false })
+				else
+					cmp.complete()
+				end
+			end,
+		},
+	}),
 	sources = {
 		{ name = "buffer" },
 	},
@@ -56,7 +75,26 @@ cmp.setup.cmdline({ "/", "?" }, {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline(),
+	mapping = cmp.mapping.preset.cmdline({
+		["<Down>"] = {
+			c = cmp.mapping.select_next_item(),
+		},
+		["<Up>"] = {
+			c = cmp.mapping.select_prev_item(),
+		},
+		["<Tab>"] = {
+			c = function()
+				if cmp.visible() then
+					if cmp.get_selected_index() == nil then
+						cmp.select_next_item()
+					end
+					cmp.confirm({ select = false })
+				else
+					cmp.complete()
+				end
+			end,
+		},
+	}),
 	sources = cmp.config.sources({
 		{ name = "path" },
 	}, {
