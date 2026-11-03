@@ -74,12 +74,13 @@ require("mason-lspconfig").setup({
 	--ensure_installed = { "ada_language_server", "asm_lsp", "clangd" },
 	automatic_enable = { exclude = { "ada_language_server" } },
 })
---vim.lsp.config('ada_ls')
+
 if vim.fn.executable("ada_language_server") == 1 then
 	vim.lsp.enable("ada_ls")
 end
-if vim.fn.executable("vscode-json-language-server") == 1 then
-	vim.lsp.enable("jsonls")
+
+if vim.fn.executable("jls") == 1 then
+	vim.lsp.enable("jls")
 end
 
 vim.keymap.set("n", "<leader>f", function()

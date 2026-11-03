@@ -17,8 +17,8 @@ vim.keymap.set("n", "<leader>w", function()
 end)
 
 vim.keymap.set("n", "<leader>mp", function()
-	vim.cmd("LivePreview start")
-end, { desc = "Open buffer in Live Preview" })
+	vim.cmd("Vellum")
+end, { desc = "Toggle Markdown Preview Buffer in Vellum" })
 
 --vim.api.nvim_create_autocmd("BufWritePre", {
 --  pattern = "*",

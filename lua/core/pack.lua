@@ -94,9 +94,8 @@ vim.pack.add({
 	--helpview
 	{ src = "https://github.com/OXY2DEV/helpview.nvim" },
 
-	--markdown live-preview
-	{ src = "https://github.com/brianhuster/live-preview.nvim" },
-
+	--markdown preview
+	{ src = "https://github.com/blackhat-7/vellum.nvim" },
 	--bar and lines for line numbers
 	--{src = "https://github.com/OXY2DEV/bars.nvim"},
 })
