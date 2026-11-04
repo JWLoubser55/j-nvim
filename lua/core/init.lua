@@ -1,4 +1,5 @@
 require("core.remap")
+require("core.powershell")
 require("core.pack")
 
 vim.opt.expandtab = true
@@ -24,11 +25,11 @@ vim.opt.formatoptions = vim.opt.formatoptions - 't'
 ]]
 require("vim._core.ui2").enable({ msg = { targets = { progress = "msg" } } })
 
-if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+--[[if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
 	if vim.fn.executable("pwsh") == 1 then
 		vim.o.shell = "pwsh"
 		vim.o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command"
 		vim.o.shellquote = '"'
 		vim.o.shellxquote = ""
 	end
-end
+end]]
